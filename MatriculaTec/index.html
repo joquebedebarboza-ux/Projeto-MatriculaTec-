@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MatriculaTec - CETAM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>MatriculaTec</h1>
+      <span>CETAM - Cursos Técnicos</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><button class="nav-btn active" onclick="showSection('cursos')">Cursos & Módulos</button></li>
+          <li><button class="nav-btn" onclick="showSection('turmas')">Turmas & Disciplinas</button></li>
+          <li><button class="nav-btn" onclick="showSection('matricula')">Nova Matrícula</button></li>
+          <li><button class="nav-btn" onclick="showSection('alunos')">Situação dos Alunos</button></li>
+          <li><button class="nav-btn" onclick="showSection('relatorios')">Relatórios & Ocupação</button></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      
+      <!-- Seção Cursos -->
+      <section id="cursos" class="section active">
+        <h2>Gerenciamento de Cursos</h2>
+        <div class="card">
+          <h3>Cursos Abertos</h3>
+          <ul>
+            <li><strong>Técnico em Informática</strong> — Módulo I (Algoritmos, Redes, Web)</li>
+            <li><strong>Técnico em Enfermagem</strong> — Módulo II (Anatomia, Farmacologia)</li>
+            <li><strong>Técnico em Administração</strong> — Módulo I (Gestão, Finanças)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Seção Turmas -->
+      <section id="turmas" class="section">
+        <h2>Turmas e Disciplinas</h2>
+        <div class="card">
+          <h3>Turmas Ativas</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Turma</th>
+                <th>Curso</th>
+                <th>Turno</th>
+                <th>Vagas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>INFO-2026/1</td>
+                <td>Técnico em Informática</td>
+                <td>Vespertino</td>
+                <td>35</td>
+              </tr>
+              <tr>
+                <td>ADM-2026/1</td>
+                <td>Técnico em Administração</td>
+                <td>Noturno</td>
+                <td>40</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Seção Matrícula -->
+      <section id="matricula" class="section">
+        <h2>Formulário de Matrícula</h2>
+        <div class="card">
+          <form id="formMatricula" onsubmit="realizarMatricula(event)">
+            <div class="form-group">
+              <label for="nome">Nome do Aluno:</label>
+              <input type="text" id="nome" required placeholder="Digite o nome completo">
+            </div>
+            
+            <div class="form-group">
+              <label for="cursoSelect">Curso:</label>
+              <select id="cursoSelect" required>
+                <option value="">Selecione um curso</option>
+                <option value="Informática">Técnico em Informática</option>
+                <option value="Enfermagem">Técnico em Enfermagem</option>
+                <option value="Administração">Técnico em Administração</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Efetuar Matrícula</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Seção Situação dos Alunos -->
+      <section id="alunos" class="section">
+        <h2>Situação das Matrículas</h2>
+        <div class="card">
+          <table id="tabelaAlunos">
+            <thead>
+              <tr>
+                <th>Matrícula</th>
+                <th>Aluno</th>
+                <th>Curso</th>
+                <th>Situação</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Preenchido via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Seção Relatórios -->
+      <section id="relatorios" class="section">
+        <h2>Relatórios do Sistema (CETAM)</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Taxa de Ocupação das Turmas</h3>
+            <p><strong>Técnico em Informática:</strong> 85% (30/35 vagas)</p>
+            <p><strong>Técnico em Administração:</strong> 60% (24/40 vagas)</p>
+          </div>
+          
+          <div class="card">
+            <h3>Alunos Aptos a Avançar de Módulo</h3>
+            <ul>
+              <li>Maria Silva — Módulo I ➔ Módulo II</li>
+              <li>suelen — Módulo I ➔ Módulo II</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
